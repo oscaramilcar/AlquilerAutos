@@ -12,7 +12,7 @@ namespace Bussiness.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        public string Insertar(string codCliente, string nombre, string apellido, DateTime fechaNac, string telefono, string dui, string direccion, string correo, string licencia)
+        public string Insertar(int codUser_client, string Username, string Password, int codClient, string dui, string nombre, string apellido, string telefono, string correo, string direccion, string licencia, int rol)
         {
             string res = "";
             SqlConnection sqlCon = new SqlConnection();
@@ -23,20 +23,23 @@ namespace Bussiness.Repositories
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = sqlCon;
-                cmd.CommandText = "ps_insertar_cliente";
+                cmd.CommandText = "sp_insertar_cliente";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@codCliente", SqlDbType.VarChar,10).Value = codCliente;
+                cmd.Parameters.Add("@id_user_client", SqlDbType.Int).Value = codUser_client;
+                cmd.Parameters.Add("@username", SqlDbType.VarChar, 15).Value = Username;
+                cmd.Parameters.Add("@pass", SqlDbType.VarChar, 15).Value = Password;
+                cmd.Parameters.Add("@id_client", SqlDbType.Int).Value = codClient;
+                cmd.Parameters.Add("@dui", SqlDbType.VarChar, 10).Value = dui;
                 cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 30).Value = nombre;
-                cmd.Parameters.Add("@apellido", SqlDbType.VarChar, 30).Value = apellido;
-                cmd.Parameters.Add("@fechaNac", SqlDbType.VarChar, 50).Value = fechaNac;
-                cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 10).Value = telefono;
-                cmd.Parameters.Add("@dui", SqlDbType.VarChar, 25).Value = dui;
-                cmd.Parameters.Add("@direccion", SqlDbType.VarChar, 250).Value = direccion;
-                cmd.Parameters.Add("@correo", SqlDbType.VarChar, 25).Value = correo;
-                cmd.Parameters.Add("@licencia", SqlDbType.VarChar, 50).Value = licencia;
+                cmd.Parameters.Add("@apellidos", SqlDbType.VarChar, 30).Value = apellido;
+                cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 12).Value = telefono;
+                cmd.Parameters.Add("@correo", SqlDbType.VarChar, 30).Value = correo;
+                cmd.Parameters.Add("@licencia", SqlDbType.VarChar, 40).Value = licencia;
+                cmd.Parameters.Add("@direccion", SqlDbType.VarChar, 60).Value = direccion;
+                cmd.Parameters.Add("@rol", SqlDbType.Int).Value = rol;
 
-                res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se ingreso el registro";
+                res = cmd.ExecuteNonQuery() == 2 ? "Exito" : "No se ingreso el registro";
             }
             catch (Exception ex)
             {
@@ -51,7 +54,7 @@ namespace Bussiness.Repositories
 
         public DataTable Mostrar()
         {
-            DataTable dataTable = new DataTable("Cliente");
+            DataTable dataTable = new DataTable("cliente");
             SqlConnection sqlCon = new SqlConnection();
             try
             {
@@ -72,7 +75,7 @@ namespace Bussiness.Repositories
             }
             return dataTable;
         }
-        public string Editar(string codCliente, string nombre, string apellido, DateTime fechaNac, string telefono, string dui, string direccion, string correo, string licencia)
+        public string Editar(int codUser_client, string Username, string Password, int codClient, string dui, string nombre, string apellido, string telefono, string correo, string direccion, string licencia)
         {
             string res = "";
             SqlConnection sqlCon = new SqlConnection();
@@ -83,18 +86,20 @@ namespace Bussiness.Repositories
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = sqlCon;
-                cmd.CommandText = "ps_editar_cliente";
+                cmd.CommandText = "sp_editar_cliente";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@codCliente", SqlDbType.VarChar, 10).Value = codCliente;
+                cmd.Parameters.Add("@id_user_client", SqlDbType.Int).Value = codUser_client;
+                cmd.Parameters.Add("@username", SqlDbType.VarChar, 15).Value = Username;
+                cmd.Parameters.Add("@pass", SqlDbType.VarChar, 15).Value = Password;
+                cmd.Parameters.Add("@id_client", SqlDbType.Int).Value = codClient;
+                cmd.Parameters.Add("@dui", SqlDbType.VarChar, 10).Value = dui;
                 cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 30).Value = nombre;
-                cmd.Parameters.Add("@apellido", SqlDbType.VarChar, 30).Value = apellido;
-                cmd.Parameters.Add("@fechaNac", SqlDbType.VarChar, 50).Value = fechaNac;
-                cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 10).Value = telefono;
-                cmd.Parameters.Add("@dui", SqlDbType.VarChar, 25).Value = dui;
-                cmd.Parameters.Add("@direccion", SqlDbType.VarChar, 250).Value = direccion;
-                cmd.Parameters.Add("@correo", SqlDbType.VarChar, 25).Value = correo;
-                cmd.Parameters.Add("@licencia", SqlDbType.VarChar, 50).Value = licencia;
+                cmd.Parameters.Add("@apellidos", SqlDbType.VarChar, 30).Value = apellido;
+                cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 12).Value = telefono;
+                cmd.Parameters.Add("@correo", SqlDbType.VarChar, 30).Value = correo;
+                cmd.Parameters.Add("@licencia", SqlDbType.VarChar, 40).Value = licencia;
+                cmd.Parameters.Add("@direccion", SqlDbType.VarChar, 60).Value = direccion;
 
                 res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se ingreso el registro";
             }
@@ -109,7 +114,7 @@ namespace Bussiness.Repositories
             return res;
         }
 
-        public string Eliminar(string id)
+        public string Eliminar(int id, int id_user)
         {
             string res = "";
             SqlConnection sqlCon = new SqlConnection();
@@ -123,9 +128,10 @@ namespace Bussiness.Repositories
                 cmd.CommandText = "sp_eliminar_cliente";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@codCliente", SqlDbType.VarChar, 10).Value = id;
+                cmd.Parameters.Add("@id_client", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@id_user_client", SqlDbType.Int).Value = id_user;
 
-                res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se pudo eliminar el registro";
+                res = cmd.ExecuteNonQuery() == 2 ? "Exito" : "No se pudo eliminar el registro";
             }
             catch (Exception ex)
             {

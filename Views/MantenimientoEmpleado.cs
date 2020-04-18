@@ -189,5 +189,10 @@ namespace Views
         {
             this.Limpiar();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

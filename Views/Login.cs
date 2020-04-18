@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Views
 {
-    public partial class Login : FormBase
+    public partial class Login : Form
     {
         public bool isNuevo = false;
         public bool isEditar = false;

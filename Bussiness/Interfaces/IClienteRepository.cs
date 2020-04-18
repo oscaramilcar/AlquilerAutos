@@ -9,12 +9,12 @@ namespace Bussiness.Interfaces
 {
     public interface IClienteRepository
     {
-        string Insertar(string codCliente, string nombre, string apellido, DateTime fechaNac, string telefono, string dui, string direccion,string correo,string licencia);
+        string Insertar(int codUser_client, string Username, string Password, int codClient, string dui,  string nombre, string apellido,  string telefono, string correo, string direccion,string licencia, int rol);
         DataTable Mostrar();
         DataTable BuscarPorNombre(string nombre);
         DataTable BuscarPorDui(string dui);
         DataTable BuscarPorCodigo(string codigo);
-        string Editar(string codCliente, string nombre, string apellido, DateTime fechaNac, string telefono, string dui, string direccion, string correo, string licencia);
-        string Eliminar(string id);
+        string Editar(int codUser_client, string Username, string Password, int codClient, string dui, string nombre, string apellido, string telefono, string correo, string direccion, string licencia);
+        string Eliminar(int id, int id_user);
     }
 }

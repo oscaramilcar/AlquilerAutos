@@ -59,7 +59,7 @@
             this.herramientasToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip.Size = new System.Drawing.Size(855, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -111,14 +111,14 @@
             // alquilarVehiculoToolStripMenuItem
             // 
             this.alquilarVehiculoToolStripMenuItem.Name = "alquilarVehiculoToolStripMenuItem";
-            this.alquilarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alquilarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.alquilarVehiculoToolStripMenuItem.Text = "Alquilar vehiculo";
             this.alquilarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.alquilarVehiculoToolStripMenuItem_Click);
             // 
             // devolverVehiculoToolStripMenuItem
             // 
             this.devolverVehiculoToolStripMenuItem.Name = "devolverVehiculoToolStripMenuItem";
-            this.devolverVehiculoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devolverVehiculoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.devolverVehiculoToolStripMenuItem.Text = "Devolver vehiculo";
             this.devolverVehiculoToolStripMenuItem.Click += new System.EventHandler(this.devolverVehiculoToolStripMenuItem_Click);
             // 
@@ -161,9 +161,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Location = new System.Drawing.Point(0, 498);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.Size = new System.Drawing.Size(855, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(855, 520);
             this.Controls.Add(this.lblNombreUser);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

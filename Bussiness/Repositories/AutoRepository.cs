@@ -64,7 +64,31 @@ namespace Bussiness.Repositories
             return dataTable;
         }
 
-        public string Editar(string placa, string modelo, int anio, string color)
+        public DataTable MostrarModelos()
+        {
+            DataTable dataTable = new DataTable("modelos");
+            SqlConnection sqlCon = new SqlConnection();
+            try
+            {
+                sqlCon.ConnectionString = Conexion.con;
+                sqlCon.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlCon;
+                cmd.CommandText = "sp_cbmodels";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                dataTable = null;
+            }
+            return dataTable;
+        }
+
+        public string Editar(int codAuto, string placaAuto, string estadoAuto, int anioAuto, string colorAuto, decimal precioAuto, string modelo)
         {
             string res = "";
             SqlConnection sqlCon = new SqlConnection();
@@ -78,12 +102,15 @@ namespace Bussiness.Repositories
                 cmd.CommandText = "sp_editar_automovil";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@placa", SqlDbType.VarChar, 25).Value = placa;
-                cmd.Parameters.Add("@modelo", SqlDbType.VarChar, 25).Value = modelo;
-                cmd.Parameters.Add("@anio", SqlDbType.Int).Value = anio;
-                cmd.Parameters.Add("@color", SqlDbType.VarChar, 25).Value = color;
+                cmd.Parameters.Add("@codAuto", SqlDbType.Int).Value = codAuto;
+                cmd.Parameters.Add("@placaAuto", SqlDbType.VarChar, 10).Value = placaAuto;
+                cmd.Parameters.Add("@estadoAuto", SqlDbType.VarChar, 5).Value = estadoAuto;
+                cmd.Parameters.Add("@anioAuto", SqlDbType.Int).Value = anioAuto;
+                cmd.Parameters.Add("@colorAuto", SqlDbType.VarChar, 15).Value = colorAuto;
+                cmd.Parameters.Add("@precioAuto", SqlDbType.Decimal).Value = precioAuto;
+                cmd.Parameters.Add("@modelo", SqlDbType.Int).Value = Convert.ToInt32(modelo);
 
-                res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se actualizo el registro";
+                res = cmd.ExecuteNonQuery() == 2 ? "Exito" : "No se actualizo el registro";
             }
             catch (Exception ex)
             {
@@ -96,7 +123,7 @@ namespace Bussiness.Repositories
             return res;
         }
 
-        public string Eliminar(string placa)
+        public string Eliminar(int codigo)
         {
             string res = "";
             SqlConnection sqlCon = new SqlConnection();
@@ -110,7 +137,7 @@ namespace Bussiness.Repositories
                 cmd.CommandText = "sp_eliminar_automovil";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@placa", SqlDbType.VarChar,25).Value = placa;
+                cmd.Parameters.Add("@codAuto", SqlDbType.Int).Value = codigo;
 
                 res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se pudo eliminar el registro";
             }
@@ -125,7 +152,7 @@ namespace Bussiness.Repositories
             return res;
         }
 
-        public string Insertar(string placa, string modelo, int anio, string color)
+        public string Insertar(int codAuto, string placaAuto, string estadoAuto, int anioAuto, string colorAuto, decimal precioAuto, string modelo)
         {
             string res = "";
             SqlConnection sqlCon = new SqlConnection();
@@ -139,12 +166,15 @@ namespace Bussiness.Repositories
                 cmd.CommandText = "sp_insertar_automovil";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@placa", SqlDbType.VarChar, 25).Value = placa;
-                cmd.Parameters.Add("@modelo", SqlDbType.VarChar, 25).Value = modelo;
-                cmd.Parameters.Add("@anio", SqlDbType.Int).Value = anio;
-                cmd.Parameters.Add("@color", SqlDbType.VarChar, 25).Value = color;
-                
-                res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se ingreso el registro";
+                cmd.Parameters.Add("@codAuto", SqlDbType.Int).Value = codAuto;
+                cmd.Parameters.Add("@placaAuto", SqlDbType.VarChar, 10).Value = placaAuto;
+                cmd.Parameters.Add("@estadoAuto", SqlDbType.VarChar, 5).Value = estadoAuto;
+                cmd.Parameters.Add("@anioAuto", SqlDbType.Int).Value = anioAuto;
+                cmd.Parameters.Add("@colorAuto", SqlDbType.VarChar, 15).Value = colorAuto;
+                cmd.Parameters.Add("@precioAuto", SqlDbType.Decimal).Value = precioAuto;
+                cmd.Parameters.Add("@modelo", SqlDbType.Int).Value = Convert.ToInt32(modelo);
+
+                res = cmd.ExecuteNonQuery() == 2 ? "Exito" : "No se ingreso el registro";
             }
             catch (Exception ex)
             {
@@ -159,7 +189,7 @@ namespace Bussiness.Repositories
 
         public DataTable Mostrar()
         {
-            DataTable dataTable = new DataTable("Automovil");
+            DataTable dataTable = new DataTable("vehiculo");
             SqlConnection sqlCon = new SqlConnection();
             try
             {

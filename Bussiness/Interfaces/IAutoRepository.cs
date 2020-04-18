@@ -9,13 +9,15 @@ namespace Bussiness.Interfaces
 {
     public interface IAutoRepository
     {
-        string Insertar(string placa, string modelo, int anio, string color);
+        string Insertar(int codAuto, string placaAuto, string estadoAuto, int anioAuto, string colorAuto, decimal precioAuto, string modelo);
 
-        string Editar(string placa, string modelo, int anio, string color);
+        string Editar(int codAuto, string placaAuto, string estadoAuto, int anioAuto, string colorAuto, decimal precioAuto, string modelo);
 
-        string Eliminar(string placa);
+        string Eliminar(int codigo);
         DataTable Mostrar();
         DataTable BuscarPorPlaca(string placa);
         DataTable BuscarProModelo(string modelo);
+
+        DataTable MostrarModelos();
     }
 }

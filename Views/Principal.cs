@@ -140,16 +140,16 @@ namespace Views
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente.MdiParent = this;
-            cliente.Show();
+            MantenimientoCliente ManClient = new MantenimientoCliente();
+            ManClient.MdiParent = this;
+            ManClient.Show();
         }
 
         private void MenuAutos_Click(object sender, EventArgs e)
         {
-            Automovil automovil = new Automovil();
-            automovil.MdiParent = this;
-            automovil.Show();
+            MantenimientoAuto ManAuto = new MantenimientoAuto();
+            ManAuto.MdiParent = this;
+            ManAuto.Show();
         }
 
         private void alquilarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)

@@ -43,19 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Automovil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Automovil.Designer.cs">
-      <DependentUpon>Automovil.cs</DependentUpon>
-    </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="Cliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Consutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +74,17 @@
     <Compile Include="Mantenimiento.Designer.cs">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="MantenimientoCliente.cs">
+    <Compile Include="MantenimientoAuto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MantenimientoCliente.Designer.cs">
-      <DependentUpon>MantenimientoCliente.cs</DependentUpon>
+    <Compile Include="MantenimientoAuto.Designer.cs">
+      <DependentUpon>MantenimientoAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoClient.Designer.cs">
+      <DependentUpon>MantenimientoClient.cs</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoEmpleado.cs">
       <SubType>Form</SubType>
@@ -142,12 +136,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Automovil.resx">
-      <DependentUpon>Automovil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DevolucionVehiculo.resx">
       <DependentUpon>DevolucionVehiculo.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,8 +148,11 @@
     <EmbeddedResource Include="Mantenimiento.resx">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MantenimientoCliente.resx">
-      <DependentUpon>MantenimientoCliente.cs</DependentUpon>
+    <EmbeddedResource Include="MantenimientoAuto.resx">
+      <DependentUpon>MantenimientoAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoClient.resx">
+      <DependentUpon>MantenimientoClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenimientoEmpleado.resx">
       <DependentUpon>MantenimientoEmpleado.cs</DependentUpon>
