@@ -39,7 +39,6 @@ namespace Views
         {
             this.txtCod_auto.Text = string.Empty;
             this.txtPlaca_auto.Text = string.Empty;
-            this.txtEstado_auto.Text = string.Empty;
             this.txtColor_auto.Text = string.Empty;
             this.txtPrecio_auto.Text = string.Empty;
             this.txtAnio_auto.Text = string.Empty;
@@ -52,19 +51,18 @@ namespace Views
             try
             {
                 string res = "";
-                if (this.txtCod_auto.Text == string.Empty || this.txtAnio_auto.Text == string.Empty || this.txtPlaca_auto.Text == string.Empty || this.txtEstado_auto.Text == string.Empty || this.txtColor_auto.Text == string.Empty || this.txtPrecio_auto.Text == string.Empty)
+                if (this.txtCod_auto.Text == string.Empty || this.txtAnio_auto.Text == string.Empty || this.txtPlaca_auto.Text == string.Empty || this.txtColor_auto.Text == string.Empty || this.txtPrecio_auto.Text == string.Empty)
                 {
                     Message(0, "Falta ingresar datos");
                     errorAuto.SetError(this.txtCod_auto, "requerido");
                     errorAuto.SetError(this.txtAnio_auto, "requerido");
-                    errorAuto.SetError(this.txtEstado_auto, "requerido");
                     errorAuto.SetError(this.txtPlaca_auto, "requerido");
                     errorAuto.SetError(this.txtPrecio_auto, "requerido");
                     errorAuto.SetError(this.txtColor_auto, "requerido");
                 }
                 else
                 {
-                    res = _autoRepository.Insertar(Convert.ToInt32(this.txtCod_auto.Text.Trim()), this.txtPlaca_auto.Text.Trim(), this.txtEstado_auto.Text.Trim(), Convert.ToInt32(this.txtAnio_auto.Text.Trim()), this.txtColor_auto.Text.Trim(), Convert.ToDecimal(this.txtPrecio_auto.Text.Trim()), this.cmbModel_auto.SelectedValue.ToString());
+                    res = _autoRepository.Insertar(Convert.ToInt32(this.txtCod_auto.Text.Trim()), this.txtPlaca_auto.Text.Trim(), "act", Convert.ToInt32(this.txtAnio_auto.Text.Trim()), this.txtColor_auto.Text.Trim(), Convert.ToDecimal(this.txtPrecio_auto.Text.Trim()), this.cmbModel_auto.SelectedValue.ToString());
 
                     if (res.Equals("Exito"))
                     {
@@ -90,19 +88,18 @@ namespace Views
             try
             {
                 string res = "";
-                if (this.txtCod_auto.Text == string.Empty || this.txtAnio_auto.Text == string.Empty || this.txtPlaca_auto.Text == string.Empty || this.txtEstado_auto.Text == string.Empty || this.txtColor_auto.Text == string.Empty || this.txtPrecio_auto.Text == string.Empty)
+                if (this.txtCod_auto.Text == string.Empty || this.txtAnio_auto.Text == string.Empty || this.txtPlaca_auto.Text == string.Empty ||  this.txtColor_auto.Text == string.Empty || this.txtPrecio_auto.Text == string.Empty)
                 {
                     Message(0, "Falta ingresar datos");
                     errorAuto.SetError(this.txtCod_auto, "requerido");
                     errorAuto.SetError(this.txtAnio_auto, "requerido");
-                    errorAuto.SetError(this.txtEstado_auto, "requerido");
                     errorAuto.SetError(this.txtPlaca_auto, "requerido");
                     errorAuto.SetError(this.txtPrecio_auto, "requerido");
                     errorAuto.SetError(this.txtColor_auto, "requerido");
                 }
                 else
                 {
-                    res = _autoRepository.Editar(Convert.ToInt32(this.txtCod_auto.Text.Trim()), this.txtPlaca_auto.Text.Trim(), this.txtEstado_auto.Text.Trim(), Convert.ToInt32(this.txtAnio_auto.Text.Trim()), this.txtColor_auto.Text.Trim(), Convert.ToDecimal(this.txtPrecio_auto.Text.Trim()), this.cmbModel_auto.SelectedValue.ToString());
+                    res = _autoRepository.Editar(Convert.ToInt32(this.txtCod_auto.Text.Trim()), this.txtPlaca_auto.Text.Trim(), "act", Convert.ToInt32(this.txtAnio_auto.Text.Trim()), this.txtColor_auto.Text.Trim(), Convert.ToDecimal(this.txtPrecio_auto.Text.Trim()), this.cmbModel_auto.SelectedValue.ToString());
 
                     if (res.Equals("Exito"))
                     {
@@ -127,7 +124,6 @@ namespace Views
             this.txtCod_auto.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             this.txtPlaca_auto.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             this.txtAnio_auto.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            this.txtEstado_auto.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             this.txtColor_auto.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             this.cmbModel_auto.SelectedValue = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             this.txtPrecio_auto.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
