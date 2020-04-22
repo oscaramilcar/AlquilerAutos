@@ -136,6 +136,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Consutas.resx">
+      <DependentUpon>Consutas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevolucionVehiculo.resx">
       <DependentUpon>DevolucionVehiculo.cs</DependentUpon>
     </EmbeddedResource>

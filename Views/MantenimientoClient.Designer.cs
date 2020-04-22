@@ -50,13 +50,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCod_client = new System.Windows.Forms.TextBox();
+            this.txtCod_user_client = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.txtUser_client = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPass_client = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCod_user_client = new System.Windows.Forms.TextBox();
+            this.txtCod_client = new System.Windows.Forms.TextBox();
             this.txtCorreo_client = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -102,13 +102,13 @@
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCod_client);
+            this.groupBox1.Controls.Add(this.txtCod_user_client);
             this.groupBox1.Controls.Add(this.lblUserName);
             this.groupBox1.Controls.Add(this.txtUser_client);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtPass_client);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCod_user_client);
+            this.groupBox1.Controls.Add(this.txtCod_client);
             this.groupBox1.Controls.Add(this.txtCorreo_client);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
@@ -292,15 +292,15 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Código usuario:";
             // 
-            // txtCod_client
+            // txtCod_user_client
             // 
-            this.txtCod_client.BackColor = System.Drawing.Color.DodgerBlue;
-            this.txtCod_client.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCod_client.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtCod_client.Location = new System.Drawing.Point(9, 54);
-            this.txtCod_client.Name = "txtCod_client";
-            this.txtCod_client.Size = new System.Drawing.Size(384, 24);
-            this.txtCod_client.TabIndex = 5;
+            this.txtCod_user_client.BackColor = System.Drawing.Color.DodgerBlue;
+            this.txtCod_user_client.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCod_user_client.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtCod_user_client.Location = new System.Drawing.Point(9, 54);
+            this.txtCod_user_client.Name = "txtCod_user_client";
+            this.txtCod_user_client.Size = new System.Drawing.Size(384, 24);
+            this.txtCod_user_client.TabIndex = 5;
             // 
             // lblUserName
             // 
@@ -352,15 +352,15 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Código cliente:";
             // 
-            // txtCod_user_client
+            // txtCod_client
             // 
-            this.txtCod_user_client.BackColor = System.Drawing.Color.DodgerBlue;
-            this.txtCod_user_client.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCod_user_client.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtCod_user_client.Location = new System.Drawing.Point(12, 256);
-            this.txtCod_user_client.Name = "txtCod_user_client";
-            this.txtCod_user_client.Size = new System.Drawing.Size(384, 24);
-            this.txtCod_user_client.TabIndex = 6;
+            this.txtCod_client.BackColor = System.Drawing.Color.DodgerBlue;
+            this.txtCod_client.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCod_client.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtCod_client.Location = new System.Drawing.Point(12, 256);
+            this.txtCod_client.Name = "txtCod_client";
+            this.txtCod_client.Size = new System.Drawing.Size(384, 24);
+            this.txtCod_client.TabIndex = 6;
             // 
             // txtCorreo_client
             // 
@@ -455,6 +455,7 @@
             this.Name = "MantenimientoCliente";
             this.Text = "MantenimientoClient";
             this.Load += new System.EventHandler(this.MantenimientoCliente_Load);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.button2, 0);
@@ -486,13 +487,13 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCod_client;
+        private System.Windows.Forms.TextBox txtCod_user_client;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.TextBox txtUser_client;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPass_client;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCod_user_client;
+        private System.Windows.Forms.TextBox txtCod_client;
         private System.Windows.Forms.TextBox txtCorreo_client;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;

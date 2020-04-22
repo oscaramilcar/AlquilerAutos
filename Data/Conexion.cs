@@ -8,6 +8,6 @@ namespace Data
 {
     public static class Conexion
     {
-        public static string con = "Data Source= (localdb)\\MSSQLLocalDB;Initial Catalog =Vehiculosrentav1; Integrated Security=true";
+        public static string con = "Data Source=.;Initial Catalog=Renta_Autos;Integrated Security=True";
     }
 }

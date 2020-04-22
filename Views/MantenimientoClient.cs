@@ -37,10 +37,10 @@ namespace Views
 
         private void Limpiar()
         {
-            this.txtCod_user_client.Text = string.Empty;
+            this.txtCod_client.Text = string.Empty;
             this.txtUser_client.Text = string.Empty;
             this.txtPass_client.Text = string.Empty;
-            this.txtCod_client.Text = string.Empty;
+            this.txtCod_user_client.Text = string.Empty;
             this.txtDui_client.Text = string.Empty;
             this.txtName_client.Text = string.Empty;
             this.txtApe_client.Text = string.Empty;
@@ -55,13 +55,13 @@ namespace Views
             try
             {
                 string res = "";
-                if (this.txtCod_user_client.Text == string.Empty || this.txtUser_client.Text == string.Empty || this.txtPass_client.Text == string.Empty || this.txtCod_client.Text == string.Empty || this.txtDui_client.Text == string.Empty || this.txtName_client.Text == string.Empty || this.txtApe_client.Text == string.Empty || this.txtTel_client.Text == string.Empty || this.txtCorreo_client.Text == string.Empty || this.txtDir_client.Text == string.Empty || this.txtLic_client.Text == string.Empty)
+                if (this.txtCod_client.Text == string.Empty || this.txtUser_client.Text == string.Empty || this.txtPass_client.Text == string.Empty || this.txtCod_user_client.Text == string.Empty || this.txtDui_client.Text == string.Empty || this.txtName_client.Text == string.Empty || this.txtApe_client.Text == string.Empty || this.txtTel_client.Text == string.Empty || this.txtCorreo_client.Text == string.Empty || this.txtDir_client.Text == string.Empty || this.txtLic_client.Text == string.Empty)
                 {
                     Message(0, "Falta ingresar datos");
-                    errorControles.SetError(this.txtCod_user_client, "requerido");
+                    errorControles.SetError(this.txtCod_client, "requerido");
                     errorControles.SetError(this.txtUser_client, "requerido");
                     errorControles.SetError(this.txtPass_client, "requerido");
-                    errorControles.SetError(this.txtCod_client, "requerido");
+                    errorControles.SetError(this.txtCod_user_client, "requerido");
                     errorControles.SetError(this.txtDui_client, "requerido");
                     errorControles.SetError(this.txtName_client, "requerido");
                     errorControles.SetError(this.txtApe_client, "requerido");
@@ -98,13 +98,13 @@ namespace Views
             try
             {
                 string res = "";
-                if (this.txtCod_user_client.Text == string.Empty || this.txtUser_client.Text == string.Empty || this.txtPass_client.Text == string.Empty || this.txtCod_client.Text == string.Empty || this.txtDui_client.Text == string.Empty || this.txtName_client.Text == string.Empty || this.txtApe_client.Text == string.Empty || this.txtTel_client.Text == string.Empty || this.txtCorreo_client.Text == string.Empty || this.txtDir_client.Text == string.Empty || this.txtLic_client.Text == string.Empty)
+                if (this.txtCod_client.Text == string.Empty || this.txtUser_client.Text == string.Empty || this.txtPass_client.Text == string.Empty || this.txtCod_user_client.Text == string.Empty || this.txtDui_client.Text == string.Empty || this.txtName_client.Text == string.Empty || this.txtApe_client.Text == string.Empty || this.txtTel_client.Text == string.Empty || this.txtCorreo_client.Text == string.Empty || this.txtDir_client.Text == string.Empty || this.txtLic_client.Text == string.Empty)
                 {
                     Message(0, "Falta ingresar datos");
-                    errorControles.SetError(this.txtCod_user_client, "requerido");
+                    errorControles.SetError(this.txtCod_client, "requerido");
                     errorControles.SetError(this.txtUser_client, "requerido");
                     errorControles.SetError(this.txtPass_client, "requerido");
-                    errorControles.SetError(this.txtCod_client, "requerido");
+                    errorControles.SetError(this.txtCod_user_client, "requerido");
                     errorControles.SetError(this.txtDui_client, "requerido");
                     errorControles.SetError(this.txtName_client, "requerido");
                     errorControles.SetError(this.txtApe_client, "requerido");
@@ -115,7 +115,7 @@ namespace Views
                 }
                 else
                 {
-                    res = _clienteRepository.Editar(Convert.ToInt32(this.txtCod_user_client.Text.Trim()), this.txtUser_client.Text.Trim(), this.txtPass_client.Text.Trim(), Convert.ToInt32(this.txtCod_client.Text.Trim()), this.txtDui_client.Text.Trim(), txtName_client.Text.Trim(), this.txtApe_client.Text.Trim(), this.txtTel_client.Text.Trim(), this.txtCorreo_client.Text.Trim(), this.txtDir_client.Text.Trim(), this.txtLic_client.Text.Trim());
+                    res = _clienteRepository.Editar(Convert.ToInt32(this.txtCod_client.Text.Trim()), this.txtUser_client.Text.Trim(), this.txtPass_client.Text.Trim(), Convert.ToInt32(this.txtCod_user_client.Text.Trim()), this.txtDui_client.Text.Trim(), txtName_client.Text.Trim(), this.txtApe_client.Text.Trim(), this.txtTel_client.Text.Trim(), this.txtCorreo_client.Text.Trim(), this.txtDir_client.Text.Trim(), this.txtLic_client.Text.Trim());
 
                     if (res.Equals("Exito"))
                     {
@@ -183,7 +183,7 @@ namespace Views
 
         public override void Consultar()
         {
-            this.txtCod_client.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            this.txtCod_user_client.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             this.txtDui_client.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             this.txtName_client.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             this.txtApe_client.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -191,7 +191,7 @@ namespace Views
             this.txtTel_client.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             this.txtDir_client.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             this.txtCorreo_client.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            this.txtCod_user_client.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            this.txtCod_client.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             this.txtUser_client.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             this.txtPass_client.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
         }

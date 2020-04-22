@@ -54,5 +54,10 @@ namespace Views
         {
 
         }
+
+        public virtual void Buscar()
+        {
+
+        }
     }
 }

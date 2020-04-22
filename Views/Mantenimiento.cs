@@ -47,5 +47,10 @@ namespace Views
         {
             Consultar();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
     }
 }
