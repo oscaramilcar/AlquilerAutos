@@ -40,7 +40,7 @@ namespace Bussiness.Repositories
                 cmd.Parameters.Add("@pass", SqlDbType.VarChar, 15).Value = pass;
                 cmd.Parameters.Add("@rol", SqlDbType.Int).Value = rol;
 
-                res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se ingreso el registro";
+                res = cmd.ExecuteNonQuery() == 2 ? "Exito" : "No se ingreso el registro";
             }
             catch (Exception ex)
             {
