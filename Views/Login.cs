@@ -58,9 +58,10 @@ namespace Views
                 {
                     Principal principal = new Principal();
                     var th = new Thread(() => Application.Run(principal));
-                    principal.idEmpleado = data.Rows[0][0].ToString();
+                    principal.idUser = data.Rows[0][0].ToString();
                     principal.username = data.Rows[0][1].ToString();
-                    principal.rol = data.Rows[0][2].ToString();
+                    principal.rol = data.Rows[0][3].ToString();
+                    principal.codEmpleado = data.Rows[0][4].ToString();
                     th.SetApartmentState(ApartmentState.STA);
                 
                     th.Start();

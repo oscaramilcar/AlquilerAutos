@@ -14,9 +14,10 @@ namespace Views
     {
         private int childFormNumber = 0;
 
-        public string idEmpleado = "";
+        public string idUser = "";
         public string username = "";
         public string rol = "";
+        public string codEmpleado = "";
 
         public Principal()
         {
@@ -133,9 +134,6 @@ namespace Views
             MantenimientoEmpleado ManEmp = new MantenimientoEmpleado();
             ManEmp.MdiParent = this;
             ManEmp.Show();
-            /*Empleado empleado = new Empleado();
-            empleado.MdiParent = this;
-            empleado.Show();*/
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,9 +152,10 @@ namespace Views
 
         private void alquilarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reserva reservaVehiculo = new Reserva();
-            reservaVehiculo.MdiParent = this;
-            reservaVehiculo.Show();
+            var reserva = Reserva.GetInstancia();
+            reserva.MdiParent = this;
+            reserva.Show();
+            reserva.codEmpleado = Convert.ToInt32(codEmpleado);
         }
 
         private void devolverVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,6 +163,11 @@ namespace Views
             DevolucionVehiculo devolucion = new DevolucionVehiculo();
             devolucion.MdiParent = this;
             devolucion.Show();
+        }
+
+        private void vehiculosReservadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
