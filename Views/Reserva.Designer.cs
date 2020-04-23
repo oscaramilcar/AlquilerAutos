@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtReserva = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cbBuscar = new System.Windows.Forms.ComboBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnRentar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtCodigoAlquiler = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -55,15 +55,35 @@
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtCodigoAlquiler = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.errorAlquiler = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dtDevolucion = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.cbBuscar = new System.Windows.Forms.ComboBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscarRetornarVehiculo = new System.Windows.Forms.TextBox();
+            this.cbVehiculoRetornar = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBuscarRetornarVehiculo = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCodigoDevolucion = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbEstadoDevolucion = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCostoAdicional = new System.Windows.Forms.TextBox();
+            this.btnRetornar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReserva)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorAlquiler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDevolucion)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -115,35 +135,6 @@
             this.dtReserva.TabIndex = 54;
             this.dtReserva.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtReserva_CellClick);
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(155, 53);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(169, 20);
-            this.txtBuscar.TabIndex = 52;
-            // 
-            // cbBuscar
-            // 
-            this.cbBuscar.FormattingEnabled = true;
-            this.cbBuscar.Items.AddRange(new object[] {
-            "Placa",
-            "Modelo"});
-            this.cbBuscar.Location = new System.Drawing.Point(16, 53);
-            this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(121, 21);
-            this.cbBuscar.TabIndex = 51;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTitulo.Location = new System.Drawing.Point(11, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(195, 25);
-            this.lblTitulo.TabIndex = 50;
-            this.lblTitulo.Text = "Alquilar verhiculo";
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(653, 482);
@@ -162,15 +153,6 @@
             this.btnRentar.Text = "Rentar";
             this.btnRentar.UseVisualStyleBackColor = true;
             this.btnRentar.Click += new System.EventHandler(this.btnRentar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(330, 51);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 53;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -197,6 +179,34 @@
             this.groupBox3.TabIndex = 47;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de alquiler";
+            // 
+            // txtCodigoAlquiler
+            // 
+            this.txtCodigoAlquiler.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodigoAlquiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoAlquiler.Location = new System.Drawing.Point(486, 68);
+            this.txtCodigoAlquiler.Name = "txtCodigoAlquiler";
+            this.txtCodigoAlquiler.Size = new System.Drawing.Size(200, 20);
+            this.txtCodigoAlquiler.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(373, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Codigo Alquiler";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblTotal.Location = new System.Drawing.Point(439, 144);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 20);
+            this.lblTotal.TabIndex = 5;
             // 
             // btnSeleccionar
             // 
@@ -329,6 +339,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.txtBuscarRetornarVehiculo);
+            this.tabPage2.Controls.Add(this.cbVehiculoRetornar);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.btnBuscarRetornarVehiculo);
+            this.tabPage2.Controls.Add(this.dtDevolucion);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -337,37 +353,213 @@
             this.tabPage2.Text = "Retornar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblTotal.Location = new System.Drawing.Point(439, 144);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(0, 20);
-            this.lblTotal.TabIndex = 5;
-            // 
-            // txtCodigoAlquiler
-            // 
-            this.txtCodigoAlquiler.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodigoAlquiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoAlquiler.Location = new System.Drawing.Point(486, 68);
-            this.txtCodigoAlquiler.Name = "txtCodigoAlquiler";
-            this.txtCodigoAlquiler.Size = new System.Drawing.Size(200, 20);
-            this.txtCodigoAlquiler.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(373, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Codigo Alquiler";
-            // 
             // errorAlquiler
             // 
             this.errorAlquiler.ContainerControl = this;
+            // 
+            // dtDevolucion
+            // 
+            this.dtDevolucion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtDevolucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtDevolucion.EnableHeadersVisualStyles = false;
+            this.dtDevolucion.Location = new System.Drawing.Point(18, 98);
+            this.dtDevolucion.Name = "dtDevolucion";
+            this.dtDevolucion.ReadOnly = true;
+            this.dtDevolucion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtDevolucion.Size = new System.Drawing.Size(718, 166);
+            this.dtDevolucion.TabIndex = 39;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(330, 51);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 53;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblTitulo.Location = new System.Drawing.Point(11, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(195, 25);
+            this.lblTitulo.TabIndex = 50;
+            this.lblTitulo.Text = "Alquilar verhiculo";
+            // 
+            // cbBuscar
+            // 
+            this.cbBuscar.FormattingEnabled = true;
+            this.cbBuscar.Items.AddRange(new object[] {
+            "Placa",
+            "Modelo"});
+            this.cbBuscar.Location = new System.Drawing.Point(16, 53);
+            this.cbBuscar.Name = "cbBuscar";
+            this.cbBuscar.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscar.TabIndex = 51;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(155, 53);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(169, 20);
+            this.txtBuscar.TabIndex = 52;
+            // 
+            // txtBuscarRetornarVehiculo
+            // 
+            this.txtBuscarRetornarVehiculo.Location = new System.Drawing.Point(157, 57);
+            this.txtBuscarRetornarVehiculo.Name = "txtBuscarRetornarVehiculo";
+            this.txtBuscarRetornarVehiculo.Size = new System.Drawing.Size(169, 20);
+            this.txtBuscarRetornarVehiculo.TabIndex = 56;
+            // 
+            // cbVehiculoRetornar
+            // 
+            this.cbVehiculoRetornar.FormattingEnabled = true;
+            this.cbVehiculoRetornar.Items.AddRange(new object[] {
+            "Placa",
+            "Modelo"});
+            this.cbVehiculoRetornar.Location = new System.Drawing.Point(18, 55);
+            this.cbVehiculoRetornar.Name = "cbVehiculoRetornar";
+            this.cbVehiculoRetornar.Size = new System.Drawing.Size(121, 21);
+            this.cbVehiculoRetornar.TabIndex = 55;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label5.Location = new System.Drawing.Point(13, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(206, 25);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "Retornar verhiculo";
+            // 
+            // btnBuscarRetornarVehiculo
+            // 
+            this.btnBuscarRetornarVehiculo.Location = new System.Drawing.Point(332, 55);
+            this.btnBuscarRetornarVehiculo.Name = "btnBuscarRetornarVehiculo";
+            this.btnBuscarRetornarVehiculo.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarRetornarVehiculo.TabIndex = 57;
+            this.btnBuscarRetornarVehiculo.Text = "Buscar";
+            this.btnBuscarRetornarVehiculo.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnRetornar);
+            this.groupBox1.Controls.Add(this.txtObservaciones);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.cbEstadoDevolucion);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtCostoAdicional);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtCodigoDevolucion);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(18, 288);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(718, 202);
+            this.groupBox1.TabIndex = 58;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Retornar vehiculo";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Codigo devolucion:";
+            // 
+            // txtCodigoDevolucion
+            // 
+            this.txtCodigoDevolucion.Location = new System.Drawing.Point(122, 28);
+            this.txtCodigoDevolucion.Name = "txtCodigoDevolucion";
+            this.txtCodigoDevolucion.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoDevolucion.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(252, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Estado:";
+            // 
+            // cbEstadoDevolucion
+            // 
+            this.cbEstadoDevolucion.FormattingEnabled = true;
+            this.cbEstadoDevolucion.Items.AddRange(new object[] {
+            "Bueno",
+            "Rayado",
+            "Golpe",
+            "Choque"});
+            this.cbEstadoDevolucion.Location = new System.Drawing.Point(301, 28);
+            this.cbEstadoDevolucion.Name = "cbEstadoDevolucion";
+            this.cbEstadoDevolucion.Size = new System.Drawing.Size(121, 21);
+            this.cbEstadoDevolucion.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 74);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Observaciones:";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(122, 71);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(578, 59);
+            this.txtObservaciones.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(472, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Costo Adicional:";
+            // 
+            // txtCostoAdicional
+            // 
+            this.txtCostoAdicional.Location = new System.Drawing.Point(584, 28);
+            this.txtCostoAdicional.Name = "txtCostoAdicional";
+            this.txtCostoAdicional.Size = new System.Drawing.Size(116, 20);
+            this.txtCostoAdicional.TabIndex = 1;
+            // 
+            // btnRetornar
+            // 
+            this.btnRetornar.Location = new System.Drawing.Point(528, 166);
+            this.btnRetornar.Name = "btnRetornar";
+            this.btnRetornar.Size = new System.Drawing.Size(75, 23);
+            this.btnRetornar.TabIndex = 6;
+            this.btnRetornar.Text = "Retornar";
+            this.btnRetornar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(625, 166);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // Reserva
             // 
@@ -386,7 +578,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtReserva)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorAlquiler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDevolucion)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -396,12 +593,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dtReserva;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cbBuscar;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnRentar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.TextBox txtApellido;
@@ -422,5 +615,25 @@
         private System.Windows.Forms.TextBox txtCodigoAlquiler;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorAlquiler;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ComboBox cbBuscar;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtBuscarRetornarVehiculo;
+        private System.Windows.Forms.ComboBox cbVehiculoRetornar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBuscarRetornarVehiculo;
+        private System.Windows.Forms.DataGridView dtDevolucion;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnRetornar;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbEstadoDevolucion;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCostoAdicional;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtCodigoDevolucion;
+        private System.Windows.Forms.Label label6;
     }
 }
