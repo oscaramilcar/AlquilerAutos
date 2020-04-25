@@ -78,6 +78,8 @@ namespace Views
                         Message(0, "Error al intentar ingresar el registro");
                     }
                 }
+                this.Mostrar();
+                this.Limpiar();
                 return true;
             }
             catch (Exception ex)

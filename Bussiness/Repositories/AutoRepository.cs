@@ -174,7 +174,7 @@ namespace Bussiness.Repositories
                 cmd.Parameters.Add("@precioAuto", SqlDbType.Decimal).Value = precioAuto;
                 cmd.Parameters.Add("@modelo", SqlDbType.Int).Value = Convert.ToInt32(modelo);
 
-                res = cmd.ExecuteNonQuery() == 2 ? "Exito" : "No se ingreso el registro";
+                res = cmd.ExecuteNonQuery() == 1 ? "Exito" : "No se ingreso el registro";
             }
             catch (Exception ex)
             {

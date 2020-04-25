@@ -28,111 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DataConsultarCliente = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtSeleccionarCliente = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DataConsultarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtSeleccionarCliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // DataConsultarCliente
+            // dtSeleccionarCliente
             // 
-            this.DataConsultarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataConsultarCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.nombres,
-            this.apellidos,
-            this.telefono,
-            this.dui,
-            this.direccion});
-            this.DataConsultarCliente.Location = new System.Drawing.Point(31, 107);
-            this.DataConsultarCliente.Name = "DataConsultarCliente";
-            this.DataConsultarCliente.Size = new System.Drawing.Size(637, 283);
-            this.DataConsultarCliente.TabIndex = 24;
+            this.dtSeleccionarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtSeleccionarCliente.Location = new System.Drawing.Point(37, 116);
+            this.dtSeleccionarCliente.Name = "dtSeleccionarCliente";
+            this.dtSeleccionarCliente.ReadOnly = true;
+            this.dtSeleccionarCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtSeleccionarCliente.Size = new System.Drawing.Size(637, 283);
+            this.dtSeleccionarCliente.TabIndex = 31;
+            this.dtSeleccionarCliente.DoubleClick += new System.EventHandler(this.dtSeleccionarCliente_DoubleClick);
             // 
-            // codigo
+            // btnBuscar
             // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            // 
-            // nombres
-            // 
-            this.nombres.HeaderText = "Nombres";
-            this.nombres.Name = "nombres";
-            // 
-            // apellidos
-            // 
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.Name = "apellidos";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            // 
-            // dui
-            // 
-            this.dui.HeaderText = "Dui";
-            this.dui.Name = "dui";
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(593, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(599, 68);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 30;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(253, 64);
+            this.label2.Location = new System.Drawing.Point(259, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 13);
-            this.label2.TabIndex = 22;
+            this.label2.TabIndex = 29;
             this.label2.Text = "Ingresar busqueda";
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(354, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 20);
-            this.textBox1.TabIndex = 21;
+            this.txtBuscar.Location = new System.Drawing.Point(360, 70);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(233, 20);
+            this.txtBuscar.TabIndex = 28;
             // 
-            // comboBox1
+            // cbBuscar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbBuscar.FormattingEnabled = true;
+            this.cbBuscar.Items.AddRange(new object[] {
             "Codigo",
-            "Nombre",
-            "Dui"});
-            this.comboBox1.Location = new System.Drawing.Point(103, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 20;
+            "DUI",
+            "Nombre"});
+            this.cbBuscar.Location = new System.Drawing.Point(109, 69);
+            this.cbBuscar.Name = "cbBuscar";
+            this.cbBuscar.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscar.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 63);
+            this.label1.Location = new System.Drawing.Point(34, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 19;
+            this.label1.TabIndex = 26;
             this.label1.Text = "Consultar por";
             // 
             // label9
@@ -140,10 +100,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.Location = new System.Drawing.Point(26, 21);
+            this.label9.Location = new System.Drawing.Point(32, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(213, 25);
-            this.label9.TabIndex = 25;
+            this.label9.TabIndex = 32;
             this.label9.Text = "Seleccionar cliente";
             // 
             // SeleccionarCliente
@@ -151,16 +111,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 428);
-            this.Controls.Add(this.DataConsultarCliente);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtSeleccionarCliente);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.cbBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SeleccionarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SeleccionarCliente";
-            ((System.ComponentModel.ISupportInitialize)(this.DataConsultarCliente)).EndInit();
+            this.Load += new System.EventHandler(this.SeleccionarCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtSeleccionarCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,17 +131,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DataConsultarCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dui;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dtSeleccionarCliente;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
     }
