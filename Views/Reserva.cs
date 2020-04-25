@@ -197,8 +197,6 @@ namespace Views
         private void btnRetornar_Click(object sender, EventArgs e)
         {
             int cod_vehiculo = (int)dtDevolucion.SelectedRows[0].Cells[0].Value;
-            string placa = (string)dtReserva.SelectedRows[0].Cells[1].Value;
-            int modelo = (int)dtReserva.SelectedRows[0].Cells[7].Value;
 
             try
             {
@@ -243,8 +241,8 @@ namespace Views
 
                 if (res.Equals("Exito"))
                 {
-                    res = _alquilarRepository.ActualizarEstadoAuto(cod_vehiculo, "alq");
-                    MessageBox.Show("¡La devolución se guardo con éxito!", "Devolucion", MessageBoxButtons.OK);
+                    res = _alquilarRepository.ActualizarEstadoAuto(cod_vehiculo, "act");
+                    MessageBox.Show("¡La devolución se realizo con éxito!", "Devolucion", MessageBoxButtons.OK);
                     this.Mostrar();
                     borrar();
                 }
@@ -252,7 +250,6 @@ namespace Views
                 {
                     Message(0, "Error al intentar ingresar el registro");
                 }
-
             }
             catch(Exception ex)
             {
